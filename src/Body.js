@@ -30,7 +30,6 @@ const Body = () => {
     const [page, setPage] = useState(PAGE_PRODUCTS);
     const [selectedCurrency, setCurrency ] = useState('$');
     const classes = useStyles();
-    const [age, setAge] = React.useState('');
     let [currencyList, setCurrencyList] = useState({});
 
     {/* These Normally come from the API's However hard coding here for the test purpose */}
@@ -97,7 +96,9 @@ const Body = () => {
     const renderCurrencyDropdown = (() => {
         var currencyListDiv = document.getElementById("currencyListDiv");
         console.log(currencyListDiv);
-        <>
+        
+        var dropdown = 
+        <div>
         <InputLabel id="demo-simple-select-helper-label">Age</InputLabel>
         <Select
           labelId="demo-simple-select-helper-label"
@@ -112,9 +113,12 @@ const Body = () => {
           <MenuItem value={20}>Twenty</MenuItem>
           <MenuItem value={30}>Thirty</MenuItem>
         </Select>
-        <FormHelperText>Some important helper text</FormHelperText>
-       </>
-        
+        </div>
+       
+       console.log(dropdown);
+       if (currencyListDiv != null){
+            currencyListDiv.append(dropdown);
+       }
         
     });
 
